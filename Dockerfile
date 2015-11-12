@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y locales \
     git \
     curl \
     nano \
+    sudo \
     wget \
     net-tools \
     build-essential \
