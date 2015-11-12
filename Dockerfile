@@ -1,7 +1,5 @@
 FROM debian:jessie
 MAINTAINER TM@KUNGF.OOO
-
-# add one fucking layer to build ansible base docker container with utf-8 encoding
 RUN apt-get update && apt-get install -y locales \
     tar \
     git \
@@ -20,6 +18,7 @@ RUN apt-get update && apt-get install -y locales \
     python-pkg-resources \
     python-pip \
     python-psycopg2 \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
 	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG c.utf8
